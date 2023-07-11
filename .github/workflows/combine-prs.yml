@@ -185,6 +185,7 @@ jobs:
               base: baseBranch,
               body: body
             });
+            console.log('PR created' + pull_response);
             // *** These changes are throwing errors in the action, but the PR is still created.  ***
             // *** Probably best to pull this script into an separate file and use the github api more directly ***
             // pull_response.number  should be the PR number e.g. 1347 in "https://api.github.com/repos/octocat/Hello-World/issues/1347/comments"
