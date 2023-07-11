@@ -135,6 +135,7 @@ jobs:
                 }
               }
             }
+            console.log('branchesAndPRStrings' + branchesAndPRStrings);
             if (branchesAndPRStrings.length == 0) {
               core.setFailed('No PRs/branches matched criteria');
               return;
@@ -148,7 +149,7 @@ jobs:
               });
             } catch (error) {
               console.log(error);
-              core.setFailed('Failed to create combined branch - maybe a branch by that name already exists?');
+              core.setFailed('Failed to create combined branch: ' + error.data.message);
               return;
             }
             
