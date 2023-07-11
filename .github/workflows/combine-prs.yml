@@ -185,11 +185,12 @@ jobs:
               base: baseBranch,
               body: body
             });
-            console.log('PR created' + pull_response);
+            
             // *** These changes are throwing errors in the action, but the PR is still created.  ***
             // *** Probably best to pull this script into an separate file and use the github api more directly ***
             // pull_response.number  should be the PR number e.g. 1347 in "https://api.github.com/repos/octocat/Hello-World/issues/1347/comments"
             // use the issues api for assignees, labels, etc. https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28#about-pull-requests
+            console.log('PR created' + pull_response);
             const number = pull_response.number
             console.log(number);
             await github.rest.issues.addLabels({
